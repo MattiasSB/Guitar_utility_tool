@@ -61,3 +61,11 @@ function connect_db(){
     return $db;
 
 }
+
+// Checks if a value is blank 
+function is_blank($var) {
+    if(!isset($var) || "" === trim($var, " ") ) {
+        return true;
+    } 
+    return false;
+}

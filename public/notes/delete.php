@@ -4,21 +4,36 @@
 
   //id is made equal to the id of the post that is selected
   $id = $_GET["id"] ?? '';
+  
+  if(!$id) redirect('/');
+
+  $session->loggedIn();
+
+  $user_id = $_SESSION['user_id'];
+
   //music variable is set to reference the object that is selected
-  $music = Music::get($id);
+  $music = Music::get($id, $user_id);
 
   //if a server POST request is made the following code is executed
   if($_SERVER['REQUEST_METHOD'] === "POST") {
 
-    //delete_music is made as a new object from the Music class
-    $delete_music = new Music($_POST);
+    //stores the form post in a variable
+    $music_post = $_POST;
+    //the variable's id is set to the post that is selected
+    $music_post['id'] = $id;
+    $music_post['user_id'] = $user_id;
 
+    //new object is created from the music class with the form data set as the post inputs
+    $delete_music = new Music($music_post);
     //delete function is ran and post with matching Id to selected is deleted
     $delete_music->delete();
 
     //redirects to the home page
     redirect('/');
   }
+  else {
+    $delete_music = Music::get($id, $user_id);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

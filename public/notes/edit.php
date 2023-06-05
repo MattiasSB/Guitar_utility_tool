@@ -4,8 +4,13 @@
 
     //id is set to the selected post or is null
     $id = $_GET['id'] ?? null; 
+    if(!$id) redirect('/');
+
+    $session->loggedIn();
+
+    $user_id = $_SESSION['user_id'];
     //music references the object created from the class Music based on the Id of the selected
-    $music = Music::get($id);
+    $music = Music::get($id, $user_id);
 
     //if a server POST request is made the following code is executed
     if($_SERVER['REQUEST_METHOD'] === "POST") {
@@ -14,6 +19,7 @@
         $music_post = $_POST;
         //the variable's id is set to the post that is selected
         $music_post['id'] = $id;
+        $music_post['user_id'] = $user_id;
 
         //new object is created from the music class with the form data set as the post inputs
         $update_music = new Music($music_post);
@@ -23,6 +29,8 @@
 
         //redirect to the home page
         redirect('/');
+    } else {
+        $update_music = Music::get($id, $user_id);
     }
 ?>
 <!DOCTYPE html>

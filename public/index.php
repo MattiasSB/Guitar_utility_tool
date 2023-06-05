@@ -2,26 +2,14 @@
 
 require('../app/init.php');
 
-// $music_song = new Music([
-//     "id" => 2,
-//     "name" => "All Along The Watchtower",
-//     "chords" => "Cm, Bb, Ab",
-//     "scales" => "Pentatonic in Cm",
-//     "status" => 1,
-//     "timeline" => "2023-02-18"
-
-// ]);
-
-// $music_song->create();
-
-//making an SQL query
-//the music variable fetches everything available in the music database
-//this is in the form of an object which can be accessed for the results found in the database
-$music = Music::get_all();
-
-// dd($music->fetch_assoc());
+//checks status of session to see if user is logged in
+$session->loggedIn();
 
 
+//sets the user id to the current session user id (if user is logged in)
+$user_id = $session->get_user_id();
+//retrieves all post under the current user id
+$music = Music::get_all($user_id);
 
 
 

@@ -2,12 +2,22 @@
 
     require('../../app/init.php');
 
+    $session->loggedIn();
+
+
+
+    
 
     //if a form is submitted as a POST request execute the following
     if($_SERVER['REQUEST_METHOD'] === 'POST') 
     {
+        $user_id = $session->get_user_id();
+        
+        $music_post = $_POST;
+        $music_post['user_id'] = $user_id;
         //create a new object using form data as column data
-        $music = new Music($_POST);
+        $music = new Music($music_post);
+
 
         //Call the create method from which transfers the object to db
         $music->create();
