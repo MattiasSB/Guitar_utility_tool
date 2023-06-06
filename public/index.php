@@ -23,8 +23,8 @@ $currentPageTitle = "Notes | Guitar Utility Tool"
     <?php @include(get_path('public/partials/header.php')) ?>
         <div class="homeIntro flex">
             <div class="flex maxWidth">
-                <a class="flex" href="<?php echo get_public_url('/notes/create.php'); ?>">
-                    <img src="images/icon_addition.svg" alt="Add a song to playlist">
+                <a class="flex" href="<?php echo get_public_url('/notes/create.php'); ?>" title="Add A song to playlist">
+                    <img src="images/icon_addition.svg" alt="Addition Button">
                     <h1>Add New</h1>
                 </a>
             </div>
@@ -43,9 +43,8 @@ $currentPageTitle = "Notes | Guitar Utility Tool"
             </div>
         </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-        <script src="js/app.js"></script>
-        <script src="chords/scripts/menu.js"></script>
+        <?php 
+        @require(get_path('public/partials/footer.php'));
+         ?>
 </body>
 </html>

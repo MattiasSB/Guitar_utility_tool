@@ -335,6 +335,12 @@ header .underlines {
     }
 }
 
+.text-red-500 {
+    color: rgb(189, 14, 14);
+    margin: 0.25em;
+}
+
+
 .reverse__menu__underscore--animation--x  {
     animation: reverse__rotateX__reverse 0.5s ease-in-out forwards;
 }
@@ -404,7 +410,7 @@ header .underlines {
 }
 
 .chords_position h1, .chords_position label {
-    color: var(--yellow);
+    color: var(--white);
 }
 
 .chords_position h2 {

@@ -8,7 +8,7 @@ $session->loggedIn();
 
 //sets the user id to the current session user id (if user is logged in)
 $user_id = $session->get_user_id();
-
+$currentPageTitle = "Search Chords | Guitar Utility Tool";
 
 ?>
 <html lang="en">

@@ -34,51 +34,37 @@
   else {
     $delete_music = Music::get($id, $user_id);  
   }
-  $currentPageTitle = "Delete " . ($music ['name']);?> . " | Guitar Utility Tool"
-?>
+  $currentPageTitle = "Delete " . ($music ['name'])  . " | Guitar Utility Tool";
+  $currentPageStyles = "css/home.css";
+  
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
     require('../partials/head.php')
 ?>
-    <body>
+    <body class="createNote">
     <?php 
         @require('../partials/header.php');
     ?>
-    <div">
-        <div>
-            <div">
-                <div>
-                    <div>
-                        <p href="<?php  /*sets breadcrumb link to take back to the home page*/ echo get_public_url('/'); ?>">My Notes</a > / <span>Delete Note</span></p>
-                        <h1 class="font-bold text-4xl mt-2">Delete: <?php /*echos the selected objects name to display*/ echo h($music ['name']);?> </h1>
-                    </div>
-                </div>
+    <div class="deleteNote">
+        <div class="homeIntro flex">
+            <div class="flex maxWidth">
+            <a href="<?php  /*sets breadcrumb link to take back to the home page*/ echo get_public_url('/'); ?>"> &#8592 Go Back</a >
+                <h1> Are you sure you want to <span class="delete">delete:</span>
+                    <br>
+                    <span class="name">'<?php /*echos the selected objects name to display*/ echo h($music ['name']);?>'</span> 
+                </h1>
             </div>
-            <!-- End: Delete Header -->
-
-            <!-- Delete Form -->
-            <div class="grid grid-cols-12 mt-10">
-                <div class="col-span-12">
-                    <form action="<?php /*submits the form to the page with selected id*/ echo get_public_url('/notes/delete.php?id=' . h($music ['id'])); ?>" method="POST">
-                        <p class="mb-4">Are you sure you want to delete <strong class="font-bold"><?php /*submits the form to the page with selected id*/ echo h($music ['name']); ?></strong>?</p>
-                        <input name="id" value="<?php /*echoes the name of the object to confirm if the user wishes to delete*/ echo h ($music['id']);?>" 
-                        type="hidden">
-                        <button class="bg-red-500 rounded-full py-2 px-4 text-white font-bold">Yes, I'm sure</button>
-                    </form>
-                </div>
-            </div>
-            <!-- End: Delete Form -->
-
-        </div>
+        </div>  
+        <form action="<?php /*submits the form to the page with selected id*/ echo get_public_url('/notes/delete.php?id=' . h($music ['id'])); ?>" method="POST">
+            <input name="id" value="<?php /*echoes the name of the object to confirm if the user wishes to delete*/ echo h ($music['id']);?>" 
+            type="hidden">
+            <button class="buttonWhite">Yes, I'm sure</button>
+        </form>
     </div>
-    <!-- End: Page Content -->
-
-    <!-- Global Footer -->
     <?php 
-        @require('../partials/footer.php');
+        @require(get_path('public/partials/footer.php'));
     ?>
-    <!-- End: Global Footer -->
-
     </body>
 </html>

@@ -9,10 +9,10 @@
         </svg>
         <ul>
             <li class="nav_items">
-                <a href="<?php echo get_public_url('index.php')?>">Music Notes</a>
+                <a href="<?php echo get_public_url('index.php')?>" title="Music Notes">Music Notes</a>
             </li>
             <li class="nav_items">
-                <a href="<?php echo get_public_url('chords/chords.php')?>">Search A Chord</a>
+                <a href="<?php echo get_public_url('chords/chords.php')?>" title="Chords Searching">Search A Chord</a>
             </li>
         </ul>
     </nav>

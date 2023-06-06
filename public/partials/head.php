@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
-    <link rel="icon" type="icon" href="<?php get_public_url('images/Asset_1.svg')?>">
+    <link rel="icon" type="icon" href="<?php echo get_public_url('images/Asset_1.svg')?>">
     <link rel="stylesheet" href="<?php echo get_public_url('css/reset.css')?>">
     <link rel="stylesheet" href="<?php echo get_public_url('css/main.css')?>">
     <link rel="stylesheet" href="<?php echo get_public_url($currentPageStyles)?>">

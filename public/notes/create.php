@@ -23,15 +23,15 @@
 ?><!DOCTYPE html>
 <html lang="en">
 <?php @include(get_path('public/partials/head.php')) ?>
-
     <body class="createNote">
     <?php @include(get_path('public/partials/header.php')) ?>
-    <div class="homeIntro flex">
+        <div class="homeIntro flex">
             <div class="flex maxWidth">
                 <h1>Add New Note</h1>
+                <a href="<?php  /*sets breadcrumb link to take back to the home page*/ echo get_public_url('/'); ?>"> &#8592 Go Back</a >
             </div>
         </div>
-    <div class="homeNotes flex">
+        <div class="homeNotes flex">
             <div class="flex maxWidth grid">
                 <div class="gridChild dropShadow">
                     <div class="cardStyle">
@@ -49,7 +49,7 @@
                                 <input id="music_bpm" name="bpm" type="number">
                                 <label for="music_status">Status</label>
                                 <select id="music_status" name="status">
-                                    <option value="0">Incomplete</option>
+                                    <option value="0">Started</option>
                                     <option value="1">Complete</option>
                                 </select>
                                 <button>Save</button>
@@ -59,10 +59,9 @@
                 </div>
             </div>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-        <script src="../js/app.js"></script>
-        <script src="../chords/scripts/menu.js"></script>
+        <?php 
+        @require(get_path('public/partials/footer.php'));
+        ?>
 
     </body>
 </html>

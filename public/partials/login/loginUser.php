@@ -65,7 +65,7 @@ require('../../../app/init.php');
             <img src="../../images/person_login.svg" alt="" width="736" height="480">
         </div>
         <?php 
-            @require('../footer.php');
+        @require(get_path('public/partials/footer.php'));
         ?>
     </body>
 </html>
