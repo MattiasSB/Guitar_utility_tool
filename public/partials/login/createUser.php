@@ -2,7 +2,7 @@
 
     require('../../../app/init.php');
 
-
+    $currentPageStyles = "css/login.css";
     //if a form is submitted as a POST request execute the following
     if($_SERVER['REQUEST_METHOD'] === 'POST') 
     {
@@ -17,61 +17,43 @@
 
     }
 
+    $currentPageTitle = "Sign Up Now | Guitar Utility Tool"
 ?><!DOCTYPE html>
 <html lang="en">
     <?php
         require('../head.php')
     ?>
 
-    <body class="flex flex-col min-h-screen">
-
-        <!-- Global Menu & Logo -->
+    <body class="fixedView">
         <?php
             require('../header.php')
         ?>
-        <!--  End: Global Menu & Logo -->
-
-        <!-- Page Content -->
-        <div class="">
-            <div class="">
-
-                <!-- Create Header -->
-                <div class="">
-                    <div class="">
-                        <div class="">
-                            <h1 class="">Sign Up</h1>
-                        </div>
+        <div class="loginForm">
+            <div class="flex">
+                <form class="logIn dropShadow" id="sign-up" action="<?php /*sets the action to create page*/ echo get_public_url('partials/login/createUser.php'); ?>" method="POST">
+                    <div class="upperCase">
+                        <h1>Sign Up</h1>
                     </div>
-                </div>
-                <!-- End: Create Header -->
-
-                <!-- Create Form -->
-                <div class="grid grid-cols-12 mt-10">
-                    <div class="col-span-12">
-
-                        <form id="sign-up" action="<?php /*sets the action to create page*/ echo get_public_url('partials/login/createUser.php'); ?>" method="POST">
-                            <div class="mb-4">
-                                <label class="block text-sm font-bold mb-2" for="user_name">Name</label>
-                                <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_name" name="name" type="text" required>
-                            </div>
-                            <div class="mb-4">
-                                <label class="block text-sm font-bold mb-2" for="user_email">Email</label>
-                                <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="user_email" name="email" type="text" required>
-                            </div>
-
-                            <div class="mb-4">
-                                <label class="block text-sm font-bold mb-2" for="password">Password</label>
-                                <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="password" name="password" type="password" required>
-                            </div>
-                            <div class="mb-4">
-                                <label class="block text-sm font-bold mb-2" for="confirm_password">Confirm Password</label>
-                                <input class="shadow border rounded w-full py-2 px-3 text-gray-700" id="confirm_password" name="confirm_password" type="password" required>
-                            </div>
-                            <button class="">Sign Up</button>
-                        </form>
-                    </div>
-                </div>
+                    <label class="name" for="user_email">Name</label>
+                    <input id="user_name" name="name" type="text" placeholder="Name" required>
+                    <label class="name" for="user_email">Email</label>
+                    <input id="user_email" name="email" type="text" required placeholder="Email" required>
+                    <label class="name" for="user_email">Password</label>
+                    <input id="user_password" name="password" type="password" placeholder="Password" required >
+                    <!-- End Sample tailwind select -->
+                    <p>Already have an account? <a class="" href="loginUser.php">Log In...</a></p>
+    
+                    <!-- Sample tailwind button -->
+                    <button class="buttonWhite">Sign Up</button>
+                    <!-- End Sample tailwind button -->
+                </form>
             </div>
         </div>
+        <div class="logInCircle">
+            <img src="../../images/person_login.svg" alt="" width="736" height="480">
+        </div>
+        <?php 
+            @require('../footer.php');
+        ?>
     </body>
 </html>

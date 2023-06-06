@@ -32,32 +32,25 @@
     redirect('/');
   }
   else {
-    $delete_music = Music::get($id, $user_id);
-}
+    $delete_music = Music::get($id, $user_id);  
+  }
+  $currentPageTitle = "Delete " . ($music ['name']);?> . " | Guitar Utility Tool"
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
     require('../partials/head.php')
 ?>
-    <body class="flex flex-col min-h-screen">
-
-    <!-- Global Menu & Logo -->
+    <body>
     <?php 
         @require('../partials/header.php');
     ?>
-    <!--  End: Global Menu & Logo -->
-    
-    <!-- Page Content -->
-    <div class="flex-grow">
-
-        <div class="container mx-auto py-20">
-
-            <!-- Delete Header -->
-            <div class="grid grid-cols-12 border-b pb-6">
-                <div class="col-span-12 flex items-center">
-                    <div class="flex-grow">
-                        <p class="text-slate-400"><a class="text-purple-500" href="<?php  /*sets breadcrumb link to take back to the home page*/ echo get_public_url('/'); ?>">My Notes</a > / <span>Delete Note</span></p>
+    <div">
+        <div>
+            <div">
+                <div>
+                    <div>
+                        <p href="<?php  /*sets breadcrumb link to take back to the home page*/ echo get_public_url('/'); ?>">My Notes</a > / <span>Delete Note</span></p>
                         <h1 class="font-bold text-4xl mt-2">Delete: <?php /*echos the selected objects name to display*/ echo h($music ['name']);?> </h1>
                     </div>
                 </div>

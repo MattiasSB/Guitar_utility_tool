@@ -184,6 +184,9 @@ function drawDiagram(response){
 
         //frett number heading to represent the edge of diagram frett #
             frettNumberLowHeading.innerHTML = lowestNumber - 1;
+            if (lowestNumber - 1 == 1 || lowestNumber - 1 == 0){
+                frettNumberLowHeading.innerHTML = 0;
+            }
             //scaleHeading text is made to be the response chordname of selected
             let currentResponse = response[0].chordName;
 

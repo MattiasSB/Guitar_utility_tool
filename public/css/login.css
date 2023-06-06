@@ -1,9 +1,21 @@
+
+.fixedView {
+    height: 100vh;
+    width: 100vw;
+    overflow-y: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
 .loginForm {
     height: 100vh;
     width: 100vw;
     max-height: 100vh;
     max-width: 100vw;
     color: var(--black);
+    position: relative;
 }
 
 .loginForm .flex {
@@ -67,6 +79,18 @@
     color: var(--black);
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px var(--yellow) inset;
+}
+
 .logIn input:focus {
     border: none;
     outline: none;
@@ -90,10 +114,73 @@ button {
     color: var(--white);
     background: #323232;
     cursor: pointer;
+    margin-top: 1em;
 }
 
 .buttonWhite:hover {
     color: var(--black);
     background: var(--white);
     transition: all 0.3s ease-in-out;
+}
+
+.logInCircle {
+    background: var(--white);
+    position: absolute;
+    z-index: -4;
+    bottom: -20vh;
+    left: -10vw;
+    border-radius: 50%;
+    height: 90vh;
+    width: 90vh;
+    overflow: hidden;
+}
+
+.logInCircle img {
+    z-index: -4;
+    height: 75%;
+    width: 75%;
+    position: absolute;
+    bottom: 5vh;
+    filter: drop-shadow(-2px 4px 4px #454545);
+}
+
+@media (max-width: 660px), (max-height: 653px)  {
+    .logIn {
+        font-size: 0.75em;
+    }
+    .logInCircle {
+        bottom: -12vh;
+        left: -8vw;
+        border-radius: 50%;
+        height: 60vh;
+        width: 60vh;
+        overflow: hidden;
+    }
+    
+    .logInCircle img {
+        z-index: -4;
+        height: 75%;
+        width: 75%;
+        position: absolute;
+        bottom: -5vh;
+        filter: drop-shadow(-2px 4px 4px #454545);
+    }
+    .logIn h1 {
+        filter: drop-shadow(-1px 0px 1px #454545);
+    }
+    .logIn .upperCase {
+        filter: drop-shadow(-2px 3px 1.3px #454545);
+    }
+    
+    
+.dropShadow {
+    filter: drop-shadow(-7px 8px 4px #000);
+}
+}
+
+@media (max-width: 430px){
+    .logIn {
+        font-size: 0.6em;
+    }
+    
 }

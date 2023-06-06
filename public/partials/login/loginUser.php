@@ -3,7 +3,7 @@
 require('../../../app/init.php');
 
 
-    $currentPageStyles = "../../css/login.css";
+    $currentPageStyles = "css/login.css";
     //if a form is submitted as a POST request execute the following
     if($_SERVER['REQUEST_METHOD'] === 'POST') 
     {
@@ -30,6 +30,7 @@ require('../../../app/init.php');
 
         
     }
+    $currentPageTitle = "Log In | Guitar Utility Tool"
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -37,7 +38,7 @@ require('../../../app/init.php');
         require('../head.php')
     ?>
 
-    <body>
+    <body class="fixedView">
         <?php
             require('../header.php')
         ?>
@@ -59,7 +60,9 @@ require('../../../app/init.php');
                     <!-- End Sample tailwind button -->
                 </form>
             </div>
-
+        </div>
+        <div class="logInCircle">
+            <img src="../../images/person_login.svg" alt="" width="736" height="480">
         </div>
         <?php 
             @require('../footer.php');

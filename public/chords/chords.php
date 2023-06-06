@@ -1,35 +1,20 @@
 <!DOCTYPE html>
+<?php
+require('../../app/init.php');
+
+//checks status of session to see if user is logged in
+$session->loggedIn();
+
+
+//sets the user id to the current session user id (if user is logged in)
+$user_id = $session->get_user_id();
+
+
+?>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chord Shapes - Guitar Utility Tool</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
-    <link rel="icon" type="icon" href="images/Asset_1.svg">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/main.css">
-</head>
+<?php @include(get_path('public/partials/head.php')) ?>
 <body class="chords">
-<header>
-    <nav>
-        <img src="images/Asset_1.svg" alt="Guitar Utilities Logo" height="50" width="50">
-        <svg class="underlines" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path id="line__top" d="M1.61804 16.35L45.2038 16.35" stroke="rgb(248, 247, 243)" stroke-width="3" stroke-linecap="round"/>
-            <path id="line__bottom" d="M9.61798 2.34998L45.618 2.34998" stroke="rgb(248, 247, 243)" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-        <ul>
-            <li class="nav_items">
-                <a href="../chords/chords.php">Search A Chord</a>
-            </li>
-            <li class="nav_items">
-                <a href="../../">Music Notes</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+<?php @include(get_path('public/partials/header.php')) ?>
     <main>
         <div class="container">
             <div class="preload">
